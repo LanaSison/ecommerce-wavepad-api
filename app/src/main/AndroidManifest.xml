@@ -39,6 +39,14 @@
             android:name=".HomePage">
 
         </activity>
+        <activity
+            android:name=".LibraryPage">
+
+        </activity>
+        <activity
+            android:name=".AccountPage">
+
+        </activity>
     </application>
 
 </manifest>
