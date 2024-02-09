@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Home"
+    <item
+        android:visible="true"
+        android:title="Home"
         android:icon="@drawable/home"
-        android:id="@+id/Home"/>
-    <item android:title="Library"
-        android:icon="@drawable/baseline_library_books_24"
-        android:id="@+id/Library"/>
-    <item android:title="Account"
+        android:id="@+id/home"/>
+    <item
+        android:visible="true"
+        android:title="Voucher"
+        android:icon="@drawable/voucher"
+        android:id="@+id/voucher" />
+    <item
+        android:visible="true"
+        android:title="Chat"
+        android:icon="@drawable/chat"
+        android:id="@+id/chat"/>
+    <item
+        android:visible="true"
+        android:title="Account"
         android:icon="@drawable/baseline_account_circle_24"
-        android:id="@+id/Account"/>
+        android:id="@+id/account"/>
 
 </menu>
