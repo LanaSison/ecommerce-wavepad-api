@@ -44,7 +44,15 @@
 
         </activity>
         <activity
+            android:name=".ChatPage">
+
+        </activity>
+        <activity
             android:name=".AccountPage">
+
+        </activity>
+        <activity
+            android:name=".CartPage">
 
         </activity>
     </application>
