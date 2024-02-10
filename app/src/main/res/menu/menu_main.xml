@@ -3,21 +3,25 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:visible="true"
         android:id="@+id/action_search"
         android:title="Search"
         android:icon="@drawable/search"
         app:showAsAction="always"
-        app:actionViewClass="android.widget.SearchView" />
+        app:actionViewClass="android.widget.SearchView"
+        android:iconTint="@color/white"/>
 
     <item
+        android:visible="true"
         android:id="@+id/action_cart"
         android:title="Cart"
         android:icon="@drawable/cart"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 
     <item
-        android:id="@+id/action_settings"
-        android:title="Settings"
+        android:visible="true"
+        android:id="@+id/menu"
+        android:title="Menu"
         android:icon="@drawable/menu_for_settings"
         app:showAsAction="ifRoom" />
 
