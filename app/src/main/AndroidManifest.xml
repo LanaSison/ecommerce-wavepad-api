@@ -55,6 +55,15 @@
             android:name=".CartPage">
 
         </activity>
+
+
+
+
+
+        <activity
+            android:name=".RegisterAsSellerPage">
+
+        </activity>
     </application>
 
 </manifest>

@@ -15,9 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/darkshadeofcyan"
             android:elevation="4dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:menu="@menu/menu_main" />
 
@@ -43,7 +41,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/bottomAppBar"
                 android:layout_gravity="bottom"
-                android:backgroundTint="@color/darkshadeofcyan"
                 app:fabCradleMargin="10dp"
                 app:fabCradleRoundedCornerRadius="50dp">
 
@@ -53,8 +50,8 @@
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     app:labelVisibilityMode="labeled"
-                    app:itemIconTint="#000000"
-                    app:itemTextColor="#000000"
+                    app:itemIconTint="@color/darkshadeofcyan"
+                    app:itemTextColor="@color/darkshadeofcyan"
                     app:menu="@menu/button_nav_bottom" />
 
             </com.google.android.material.bottomappbar.BottomAppBar>
@@ -62,7 +59,6 @@
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/darkshadeofcyan"
                 android:src="@drawable/baseline_add_24"
                 app:layout_anchor="@id/bottomAppBar"
                 app:maxImageSize="40dp"

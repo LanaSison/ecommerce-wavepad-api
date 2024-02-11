@@ -6,22 +6,24 @@
         android:visible="true"
         android:id="@+id/action_search"
         android:title="Search"
-        android:icon="@drawable/search"
+        android:icon="@drawable/baseline_search_24"
         app:showAsAction="always"
         app:actionViewClass="android.widget.SearchView"
-        android:iconTint="@color/white"/>
+        android:iconTint="@color/darkshadeofcyan"/>
 
     <item
         android:visible="true"
         android:id="@+id/action_cart"
         android:title="Cart"
-        android:icon="@drawable/cart"
+        android:icon="@drawable/baseline_shopping_cart_24"
+        android:iconTint="@color/darkshadeofcyan"
         app:showAsAction="always" />
 
     <item
         android:visible="true"
         android:id="@+id/menu"
         android:title="Menu"
+        android:iconTint="@color/darkshadeofcyan"
         android:icon="@drawable/menu_for_settings"
         app:showAsAction="ifRoom" />
 
