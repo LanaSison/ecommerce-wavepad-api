@@ -1,3 +1,4 @@
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,13 +8,22 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.wavepad.ProductDataClass
 import com.example.wavepad.R
 
-class ProductAdapter(private val productList: List<ProductDataClass>) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+class ProductAdapter(private val productList: List<ProductDataClass>, private val onItemClick: (ProductDataClass) -> Unit) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
     inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleTextView: TextView = itemView.findViewById(R.id.text_product_name)
         val priceTextView: TextView = itemView.findViewById(R.id.text_product_price)
         val imageProduct: ImageView = itemView.findViewById(R.id.image_product)
-        val descriptionTextView: TextView = itemView.findViewById(R.id.text_description)
+
+        init {
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    onItemClick(productList[position])
+                    Log.d("ProductAdapter", "Clicked on item at position: $position")
+                }
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
@@ -26,7 +36,6 @@ class ProductAdapter(private val productList: List<ProductDataClass>) : Recycler
         holder.titleTextView.text = currentItem.title
         holder.priceTextView.text = currentItem.price
         holder.imageProduct.setImageResource(currentItem.imageResource)
-        holder.descriptionTextView.text = currentItem.description
     }
 
     override fun getItemCount() = productList.size

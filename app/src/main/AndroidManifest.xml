@@ -19,6 +19,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -64,6 +65,12 @@
             android:name=".RegisterAsSellerPage">
 
         </activity>
+
+        <activity
+            android:name=".ProductFullDetail">
+
+        </activity>
+
     </application>
 
 </manifest>
