@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@color/darkshadeofcyan"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -39,44 +40,125 @@
             android:scaleType="centerCrop"
             android:src="@drawable/wavepadlogo" />
 
-        <TextView
-            android:id="@+id/text_product_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/image_product"
-            android:layout_marginTop="16dp"
-            android:text="wavepad"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+        <LinearLayout
+            android:id="@+id/inner_linear_layout"
+            android:layout_width="270dp"
+            android:layout_height="150dp"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="65dp"
+            android:layout_toEndOf="@id/image_product">
 
-        <TextView
-            android:id="@+id/text_author"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/text_product_name"
-            android:layout_marginTop="8dp"
-            android:text="Mark"
-            android:textSize="16sp" />
+            <TextView
+                android:id="@+id/text_product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wavepad"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/text_genre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/text_author"
-            android:layout_marginTop="8dp"
-            android:text="Malandi"
-            android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/text_author" />
+            <TextView
+                android:id="@+id/text_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mark"
+                android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/text_price"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/text_genre"
-            android:layout_marginTop="8dp"
-            android:text="$150"
-            android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/text_genre" />
+            <TextView
+                android:id="@+id/text_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Malandi"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/text_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$150"
+                android:textSize="16sp"
+                android:layout_marginBottom="0dp"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:background="">
+
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="43dp"
+                android:background="@drawable/stroke"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="12dp">
+
+                <ImageButton
+                    android:id="@+id/btn_minus"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/round_shape"
+                    android:backgroundTint="@color/darkshadeofcyan"
+                    android:src="@drawable/baseline_minus_24"
+                    app:tint="@color/white"
+                    android:layout_marginStart="9dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/text_quantity"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:padding="10dp"
+                    android:text="1"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:layout_margin="18dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"/>
+
+                <ImageButton
+                    android:id="@+id/btn_plus"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/round_shape"
+                    android:backgroundTint="@color/darkshadeofcyan"
+                    android:src="@drawable/baseline_add_24"
+                    app:tint="@color/white"
+                    android:layout_marginEnd=""
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/AddToCart"
+                android:layout_width="100dp"
+                android:layout_height="43dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="130dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/round_shape"
+                android:backgroundTint="@color/darkshadeofcyan"
+                android:src="@drawable/baseline_shopping_cart_24"
+                app:tint="@color/white" />
+
+            <Button
+                android:id="@+id/BuyNow"
+                android:layout_width="115dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="end"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="9dp"
+                android:backgroundTint="@color/darkshadeofcyan"
+                android:text="Buy Now" />
+
+        </RelativeLayout>
 
     </RelativeLayout>
 
