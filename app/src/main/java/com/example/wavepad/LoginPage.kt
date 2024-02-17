@@ -33,13 +33,8 @@ class LoginPage: AppCompatActivity() {
         }
     }
     private fun performLogin(email: String, password: String) {
-        // Here you can add your logic to perform the login.
-        // Typically, you'll make an API call to your backend server to authenticate the user.
-        // If login is successful, navigate to the home screen. Otherwise, show an error message.
-
-        // For demonstration purposes, let's assume the login is successful and navigate to the home screen
         val intent = Intent(this, HomePage::class.java)
         startActivity(intent)
-        finish() // Finish this activity so that user cannot navigate back to the login screen using the back button
+        finish()
     }
 }

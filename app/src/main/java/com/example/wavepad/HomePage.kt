@@ -9,16 +9,20 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomePage : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var bottomNav: BottomNavigationView
+    private lateinit var fab: FloatingActionButton
 
     private lateinit var recyclerView: RecyclerView
+
     private lateinit var productAdapter: ProductAdapter
     private lateinit var productList: List<ProductDataClass>
 
@@ -26,7 +30,6 @@ class HomePage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_page)
 
-        // Set up the product list
         productList = listOf(
             ProductDataClass("Product 1", "Author 1", "Genre 1", "$10", R.drawable.wavepadlogo),
             ProductDataClass("Product 2", "Author 2", "Genre 2", "$20", R.drawable.wavepadlogo),
@@ -39,21 +42,17 @@ class HomePage : AppCompatActivity() {
             ProductDataClass("Product 9", "Author 9", "Genre 9", "$90", R.drawable.wavepadlogo)
         )
 
-        // Initialize RecyclerView
         recyclerView = findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
 
-        // Initialize ProductAdapter with the productList and item click listener
         productAdapter = ProductAdapter(productList) { product ->
             val intent = Intent(this, ProductFullDetail::class.java)
             intent.putExtra("PRODUCT", product)
             startActivity(intent)
         }
 
-        // Set ProductAdapter to RecyclerView
         recyclerView.adapter = productAdapter
 
-        // Setup toolbar
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
@@ -61,6 +60,7 @@ class HomePage : AppCompatActivity() {
 
         drawerLayout = findViewById(R.id.drawer_layout)
         bottomNav = findViewById(R.id.bottomNavigationView)
+        fab = findViewById(R.id.fab)
 
         // Handle bottom navigation item clicks
         bottomNav.setOnItemSelectedListener { menuItem ->
@@ -84,6 +84,10 @@ class HomePage : AppCompatActivity() {
                 else -> false
             }
         }
+        fab.setOnClickListener {
+            startNewActivity(UploadPage::class.java)
+            true
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -94,7 +98,6 @@ class HomePage : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_search -> {
-                // Handle search action
                 true
             }
             R.id.action_cart -> {
@@ -102,7 +105,6 @@ class HomePage : AppCompatActivity() {
                 true
             }
             R.id.menu -> {
-                // Handle menu action (open drawer)
                 drawerLayout.openDrawer(GravityCompat.START)
                 true
             }
