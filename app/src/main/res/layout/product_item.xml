@@ -8,12 +8,12 @@
 
     <ImageView
         android:id="@+id/image_product"
-        android:layout_width="90dp"
-        android:layout_height="140dp"
-        android:src="@drawable/wavepadlogo"
-        android:scaleType="centerCrop"
+        android:layout_width="130dp"
+        android:layout_height="170dp"
         android:clickable="true"
-        android:contentDescription="" />
+        android:contentDescription=""
+        android:scaleType="centerCrop"
+        android:src="@drawable/wavepadlogo" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,20 +29,25 @@
             android:text="Product Name"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:clickable="true"/>
+            android:clickable="true"
+            android:layout_marginTop="8dp"/>
 
         <TextView
             android:id="@+id/text_author"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Author"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
             android:clickable="true"/>
 
         <TextView
-            android:id="@+id/text_genre"
+            android:id="@+id/text_categories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Genre"
+            android:text="Categories"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
             android:clickable="true"/>
 
         <TextView
@@ -51,14 +56,34 @@
             android:layout_height="wrap_content"
             android:text="Price: $10"
             android:textSize="14sp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
             android:clickable="true"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:progressBackgroundTint="@color/lightgrey"
+            android:progressTint="@color/yellow"
+            android:rating="3.5"
+            android:scaleX="0.50"
+            android:scaleY="0.50"
+            android:stepSize="0.6"
+            android:transformPivotX="0dp"
+            android:transformPivotY="10dp" />
 
         <Button
             android:id="@+id/button_buy_now"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Buy Now"
-            android:clickable="true"/>
+            android:clickable="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="-8dp"
+            android:backgroundTint="@color/darkshadeofcyan"
+            android:layout_gravity="end"/>
     </LinearLayout>
 
 </LinearLayout>

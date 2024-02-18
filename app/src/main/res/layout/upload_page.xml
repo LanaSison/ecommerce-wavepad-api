@@ -9,10 +9,12 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true"
-        android:src="@drawable/placeholder_image"
-        android:contentDescription="@string/image_view" />
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="62dp"
+        android:contentDescription="@string/image_view"
+        android:src="@drawable/placeholder_image" />
 
     <Button
         android:id="@+id/buttonChoose"
@@ -20,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/imageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="123dp"
         android:text="Choose an Image" />
 
     <Button
@@ -29,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/buttonChoose"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="31dp"
         android:text="Upload" />
 
 </RelativeLayout>

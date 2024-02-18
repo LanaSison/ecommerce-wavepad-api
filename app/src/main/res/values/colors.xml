@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="darkshadeofcyan">#18988B</color>
     <color name="lightgrey">#E4E2E2</color>
+    <color name="yellow">#FFEB3B</color>
+    <color name="starOutlineColor">#CCCCCC</color>
 </resources>
