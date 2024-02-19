@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Billing Details Section -->
+        <TextView
+            android:id="@+id/billing_details_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Billing Details"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"/>
+
+        <!-- First Name -->
+        <EditText
+            android:id="@+id/edit_first_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="First Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/billing_details_heading"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Last Name -->
+        <EditText
+            android:id="@+id/edit_last_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Last Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_first_name"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Street Address -->
+        <EditText
+            android:id="@+id/edit_street_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Street Address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_last_name"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Town/City -->
+        <EditText
+            android:id="@+id/edit_town_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Town/City"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_street_address"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Country -->
+        <EditText
+            android:id="@+id/edit_country"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Country"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_town_city"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Postal/Zip -->
+        <EditText
+            android:id="@+id/edit_postal_zip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Postal/Zip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_country"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Email Address -->
+        <EditText
+            android:id="@+id/edit_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Email Address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_postal_zip"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Phone Number -->
+        <EditText
+            android:id="@+id/edit_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_email"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Product Details Section -->
+        <TextView
+            android:id="@+id/product_details_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Details"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_phone"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"/>
+
+        <!-- Product Name -->
+        <TextView
+            android:id="@+id/text_product_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Product Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_details_heading"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Quantity -->
+        <TextView
+            android:id="@+id/text_quantity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Quantity: 1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_product_name"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Checkout Button -->
+        <Button
+            android:id="@+id/button_checkout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Checkout"
+            app:layout_constraintTop_toBottomOf="@+id/text_quantity"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

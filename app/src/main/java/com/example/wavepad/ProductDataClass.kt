@@ -5,7 +5,7 @@ import java.io.Serializable
 data class ProductDataClass(
     val title: String,
     val author: String,
-    val genre: String,
+    val categories: String,
     val price: String,
     val imageResource: Int
 ):Serializable

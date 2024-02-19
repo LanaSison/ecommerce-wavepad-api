@@ -1,8 +1,9 @@
 package com.example.wavepad
 
-import ProductAdapter
+
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +11,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -23,7 +23,6 @@ class HomePage : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
 
-    private lateinit var productAdapter: ProductAdapter
     private lateinit var productList: List<ProductDataClass>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,11 +44,19 @@ class HomePage : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(this, 2)
 
-        productAdapter = ProductAdapter(productList) { product ->
-            val intent = Intent(this, ProductFullDetail::class.java)
-            intent.putExtra("PRODUCT", product)
-            startActivity(intent)
-        }
+        val productAdapter = ProductAdapter(productList,
+            onItemClick = { product ->
+                val intent = Intent(this, ProductFullDetail::class.java)
+                intent.putExtra("PRODUCT", product)
+                startActivity(intent)
+            },
+            onBuyButtonClick = { product ->
+                val intent = Intent(this, ProductFullDetail::class.java)
+                intent.putExtra("PRODUCT", product)
+                startActivity(intent)
+                Log.d("HomePage", "Clicked Buy Now for product: ${product.title}")
+            }
+        )
 
         recyclerView.adapter = productAdapter
 

@@ -1,19 +1,22 @@
+package com.example.wavepad
+
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.wavepad.ProductDataClass
-import com.example.wavepad.R
-
-class ProductAdapter(private val productList: List<ProductDataClass>, private val onItemClick: (ProductDataClass) -> Unit) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+class ProductAdapter(private val productList: List<ProductDataClass>,
+                     private val onItemClick: (ProductDataClass) -> Unit,
+                     private val onBuyButtonClick: (ProductDataClass) -> Unit) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
     inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleTextView: TextView = itemView.findViewById(R.id.text_product_name)
         val priceTextView: TextView = itemView.findViewById(R.id.text_product_price)
         val imageProduct: ImageView = itemView.findViewById(R.id.image_product)
+        val buyButton: Button = itemView.findViewById(R.id.button_buy_now)
 
         init {
             itemView.setOnClickListener {
@@ -21,6 +24,13 @@ class ProductAdapter(private val productList: List<ProductDataClass>, private va
                 if (position != RecyclerView.NO_POSITION) {
                     onItemClick(productList[position])
                     Log.d("ProductAdapter", "Clicked on item at position: $position")
+                }
+            }
+            buyButton.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    onBuyButtonClick(productList[position])
+                    Log.d("ProductAdapter", "Clicked on buy button at position: $position")
                 }
             }
         }
