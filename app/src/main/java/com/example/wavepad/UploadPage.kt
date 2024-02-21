@@ -64,7 +64,10 @@ class UploadPage : AppCompatActivity() {
     private fun uploadImage(imageFile: File) {
         imageUploader.uploadImage(imageFile, "Description") { success, message ->
             if (success) {
-                Toast.makeText(this, "Image uploaded successfully", Toast.LENGTH_SHORT).show()
+                val intent = Intent()
+                intent.putExtra("imageFile", imageFile.absolutePath)
+                setResult(Activity.RESULT_OK, intent)
+                finish()
             } else {
                 Toast.makeText(this, "Failed to upload image: $message", Toast.LENGTH_SHORT).show()
             }

@@ -12,7 +12,7 @@ import java.io.File
 
 class ImageUploader {
 
-    private val retrofitService = RetrofitClient.instance
+    private val retrofitService = ImageUploadService.instance
 
     fun uploadImage(imageFile: File, description: String, callback: (Boolean, String) -> Unit) {
         val requestFile = imageFile.asRequestBody("image/*".toMediaTypeOrNull())

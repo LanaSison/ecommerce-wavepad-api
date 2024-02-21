@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiManager {
     private val retrofit = Retrofit.Builder()
-        .baseUrl("http://localhost/127.0.0.1/api/signup/") // Replace with your API base URL
+        .baseUrl("http://localhost/127.0.0.1/api/signup/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 

@@ -20,8 +20,19 @@ class ProductFullDetail: AppCompatActivity() {
         val quantityTextView: TextView = findViewById(R.id.text_quantity)
         val minusButton: ImageButton = findViewById(R.id.btn_minus)
         val plusButton: ImageButton = findViewById(R.id.btn_plus)
+        val productNameTextView: TextView = findViewById(R.id.text_product_name)
+        val productPriceTextView: TextView = findViewById(R.id.text_product_price)
+        val productDescriptionTextView: TextView = findViewById(R.id.descriptiontext)
+        val productImageView: ImageView = findViewById(R.id.image_product)
 
-        // Set initial quantity
+        val product = intent.getSerializableExtra("PRODUCT") as? ProductDataClass
+        product?.let {
+            productNameTextView.text = it.title
+            productPriceTextView.text = it.price
+            productDescriptionTextView.text = it.description
+            productImageView.setImageResource(it.imageResource)
+        }
+
         quantityTextView.text = "$quantity"
 
         minusButton.setOnClickListener {
@@ -37,17 +48,14 @@ class ProductFullDetail: AppCompatActivity() {
         }
 
         buyNowButton.setOnClickListener {
-            // Retrieve product details from the intent
-            val productName = intent.getStringExtra("PRODUCT_NAME")
-
-            // Create intent to navigate to CheckoutActivity
+            // Create intent to navigate to CheckoutPage
             val checkoutIntent = Intent(this@ProductFullDetail, CheckOutPage::class.java).apply {
-                putExtra("PRODUCT_NAME", productName)
+                putExtra("PRODUCT", product)
                 putExtra("QUANTITY", quantity)
             }
             startActivity(checkoutIntent)
 
-            Log.d("ProductFullDetail", "Navigating to CheckoutActivity")
+            Log.d("ProductFullDetail", "Navigating to CheckoutPage")
         }
     }
 }

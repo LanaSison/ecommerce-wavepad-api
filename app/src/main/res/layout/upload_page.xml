@@ -61,7 +61,7 @@
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="460dp"
                 android:layout_below="@id/imagelayout"
                 android:layout_marginTop="20dp">
 
@@ -70,8 +70,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:paddingLeft="16dp"
-                    android:hint="Product Name"/>
+                    android:hint="Product Name"
+                    android:paddingLeft="16dp" />
 
                 <EditText
                     android:id="@+id/editTextAuthor"
@@ -79,8 +79,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/editTextProductName"
                     android:layout_marginTop="8dp"
-                    android:paddingLeft="16dp"
-                    android:hint="Author"/>
+                    android:hint="Author"
+                    android:paddingLeft="16dp" />
 
                 <EditText
                     android:id="@+id/editTextCategories"
@@ -88,8 +88,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/editTextAuthor"
                     android:layout_marginTop="8dp"
-                    android:paddingLeft="16dp"
-                    android:hint="Categories"/>
+                    android:hint="Categories"
+                    android:paddingLeft="16dp" />
 
                 <EditText
                     android:id="@+id/editTextPrice"
@@ -97,11 +97,10 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/editTextCategories"
                     android:layout_marginTop="8dp"
-                    android:paddingLeft="16dp"
+                    android:hint="Price"
                     android:inputType="numberDecimal"
-                    android:hint="Price"/>
+                    android:paddingLeft="16dp" />
 
-                <!-- NestedScrollView for the description -->
                 <ScrollView
                     android:id="@+id/description"
                     android:layout_width="match_parent"
@@ -113,9 +112,9 @@
                         android:id="@+id/editTextDescription"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="16dp"
                         android:hint="Description"
-                        android:scrollbars="vertical"/>
+                        android:paddingLeft="16dp"
+                        android:scrollbars="vertical" />
 
                 </ScrollView>
 
@@ -126,8 +125,8 @@
                     android:layout_below="@id/description"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="16dp"
-                    android:text="Choose an Image"
-                    android:backgroundTint="@color/darkshadeofcyan"/>
+                    android:backgroundTint="@color/darkshadeofcyan"
+                    android:text="Choose an Image" />
 
                 <Button
                     android:id="@+id/buttonUpload"
@@ -136,8 +135,8 @@
                     android:layout_below="@id/buttonChoose"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="16dp"
-                    android:text="Upload"
-                    android:backgroundTint="@color/darkshadeofcyan"/>
+                    android:backgroundTint="@color/darkshadeofcyan"
+                    android:text="Upload" />
 
             </RelativeLayout>
 

@@ -78,7 +78,7 @@
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/text_price"
+                    android:id="@+id/text_product_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="$150"
@@ -88,25 +88,12 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/catagories"
-                android:layout_width="125dp"
-                android:layout_height="40dp"
-                android:layout_below="@id/image_product"
-                android:layout_alignParentStart="true"
-                android:layout_centerHorizontal="false"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="9dp"
-                android:gravity="center"
-                android:text="Catagories"
-                android:textSize="16sp"/>
-
-            <TextView
                 android:id="@+id/description"
                 android:layout_width="125dp"
                 android:layout_height="40dp"
-                android:layout_below="@+id/catagories"
+                android:layout_below="@+id/image_product"
                 android:layout_centerHorizontal="false"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="273dp"
                 android:gravity="center"
                 android:text="Description"

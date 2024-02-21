@@ -8,9 +8,14 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-class ProductAdapter(private val productList: List<ProductDataClass>,
-                     private val onItemClick: (ProductDataClass) -> Unit,
-                     private val onBuyButtonClick: (ProductDataClass) -> Unit) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+
+class ProductAdapter(
+    private var productList: List<ProductDataClass>,
+    private val onItemClick: (ProductDataClass) -> Unit,
+    private val onBuyButtonClick: (ProductDataClass) -> Unit
+) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+
+    private var filteredList: List<ProductDataClass> = productList
 
     inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleTextView: TextView = itemView.findViewById(R.id.text_product_name)
@@ -22,14 +27,14 @@ class ProductAdapter(private val productList: List<ProductDataClass>,
             itemView.setOnClickListener {
                 val position = adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
-                    onItemClick(productList[position])
+                    onItemClick(filteredList[position])
                     Log.d("ProductAdapter", "Clicked on item at position: $position")
                 }
             }
             buyButton.setOnClickListener {
                 val position = adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
-                    onBuyButtonClick(productList[position])
+                    onBuyButtonClick(filteredList[position])
                     Log.d("ProductAdapter", "Clicked on buy button at position: $position")
                 }
             }
@@ -42,11 +47,23 @@ class ProductAdapter(private val productList: List<ProductDataClass>,
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        val currentItem = productList[position]
+        val currentItem = filteredList[position]
         holder.titleTextView.text = currentItem.title
         holder.priceTextView.text = currentItem.price
         holder.imageProduct.setImageResource(currentItem.imageResource)
     }
 
-    override fun getItemCount() = productList.size
+    override fun getItemCount() = filteredList.size
+
+    fun filter(text: String?) {
+        if (text.isNullOrEmpty()) {
+            filteredList = productList
+        } else {
+            val searchText = text.toLowerCase().trim()
+            filteredList = productList.filter { product ->
+                product.title.toLowerCase().contains(searchText)
+            }
+        }
+        notifyDataSetChanged()
+    }
 }
