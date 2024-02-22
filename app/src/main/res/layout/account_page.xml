@@ -80,7 +80,7 @@
                 android:id="@+id/editprofile"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="123dp"
+                android:layout_marginEnd="105dp"
                 android:text="Edit Profile"
                 android:textColor="@color/white"
                 android:textSize="14sp"
@@ -90,11 +90,11 @@
                 android:id="@+id/followers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
                 android:text="Followers 0"
                 android:textColor="@color/white"
                 android:textSize="14sp"
-                android:textStyle="bold"
-                android:layout_marginEnd="18dp"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/followings"
@@ -110,95 +110,133 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/myPurchase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="My Purchase"
-        android:textColor="@color/darkshadeofcyan"
-        android:textSize="23sp"
-        android:textStyle="normal"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/profileInfoContainer"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"/>
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <TextView
-        android:id="@+id/myShop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="My Shop"
-        android:textColor="@color/darkshadeofcyan"
-        android:textSize="23sp"
-        android:textStyle="normal"
-        app:layout_constraintTop_toBottomOf="@id/myPurchase"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="8dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/addtocart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add to Cart"
-        android:textColor="@color/darkshadeofcyan"
-        android:textSize="23sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myShop" />
+            <TextView
+                android:id="@+id/myPurchase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginStart="5dp"
+                android:drawablePadding="8dp"
+                android:text="My Purchase"
+                android:textColor="@color/darkshadeofcyan"
+                android:textSize="23sp"
+                android:textStyle="normal"
+                android:layout_alignParentStart="true" />
 
-    <TextView
-        android:id="@+id/register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:textColor="@color/darkshadeofcyan"
-        android:textSize="23sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addtocart" />
+            <TextView
+                android:id="@+id/myShop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginStart="5dp"
+                android:drawablePadding="8dp"
+                android:text="My Shop"
+                android:textColor="@color/darkshadeofcyan"
+                android:textSize="23sp"
+                android:textStyle="normal"
+                android:layout_below="@id/myPurchase"
+                android:layout_alignParentStart="true" />
 
-    <TextView
-        android:id="@+id/ratings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ratings"
-        android:textColor="@color/darkshadeofcyan"
-        android:textSize="23sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register" />
+            <TextView
+                android:id="@+id/addtocart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginStart="5dp"
+                android:drawablePadding="8dp"
+                android:drawableLeft="@drawable/baseline_shopping_cart_24"
+                android:text="Add to Cart"
+                android:textColor="@color/darkshadeofcyan"
+                android:textSize="23sp"
+                android:textStyle="normal"
+                android:layout_below="@id/myShop"
+                android:layout_alignParentStart="true" />
 
-    <TextView
-        android:id="@+id/accountsettengs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/baseline_account_circle_24"
-        android:text="Account Settings"
-        android:textColor="@color/darkshadeofcyan"
-        android:textSize="23sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratings" />
+            <TextView
+                android:id="@+id/register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginStart="5dp"
+                android:drawablePadding="8dp"
+                android:drawableLeft="@drawable/baseline_app_registration_24"
+                android:text="Register"
+                android:textColor="@color/darkshadeofcyan"
+                android:textSize="23sp"
+                android:textStyle="normal"
+                android:layout_below="@id/addtocart"
+                android:layout_alignParentStart="true" />
 
-    <TextView
-        android:id="@+id/privacy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Privacy"
-        android:textColor="@color/darkshadeofcyan"
-        android:textSize="23sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/accountsettengs" />
+            <TextView
+                android:id="@+id/ratings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginStart="5dp"
+                android:drawablePadding="8dp"
+                android:drawableLeft="@drawable/baseline_star_outline_24"
+                android:drawableTint="@color/yellow"
+                android:text="Ratings"
+                android:textColor="@color/darkshadeofcyan"
+                android:textSize="23sp"
+                android:textStyle="normal"
+                android:layout_below="@id/register"
+                android:layout_alignParentStart="true" />
 
-    <TextView
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log Out"
-        android:textColor="@color/darkshadeofcyan"
-        android:textSize="23sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/privacy" />
+
+            <TextView
+                android:id="@+id/privacy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginStart="5dp"
+                android:drawablePadding="8dp"
+                android:drawableLeft="@drawable/baseline_privacy_tip_24"
+                android:text="Privacy"
+                android:textColor="@color/darkshadeofcyan"
+                android:textSize="23sp"
+                android:textStyle="normal"
+                android:layout_below="@id/ratings"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginStart="5dp"
+                android:drawablePadding="8dp"
+                android:drawableLeft="@drawable/baseline_logout_24"
+                android:text="Log Out"
+                android:textColor="@color/darkshadeofcyan"
+                android:textSize="23sp"
+                android:textStyle="normal"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
