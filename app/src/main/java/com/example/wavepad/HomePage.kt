@@ -94,6 +94,41 @@ class HomePage : AppCompatActivity() {
             productList.clear()
             products?.let {
                 productList.addAll(it)
+                // dummy products
+                productList.add(
+                    ProductDataClass(
+                        id = 101,
+                        imageResource = R.drawable.wavepadlogo,
+                        title = "Dummy Product 1",
+                        author = "Author 1",
+                        categories = "Category 1",
+                        price = "$50",
+                        description = "Description 1"
+                    )
+                )
+                productList.add(
+                    ProductDataClass(
+                        id = 102,
+                        imageResource = R.drawable.wavepadlogo,
+                        title = "Dummy Product 2",
+                        author = "Author 2",
+                        categories = "Category 2",
+                        price = "$60",
+                        description = "Description 2"
+                    )
+                )
+                productList.add(
+                    ProductDataClass(
+                        id = 103,
+                        imageResource = R.drawable.wavepadlogo,
+                        title = "Dummy Product 3",
+                        author = "Author 3",
+                        categories = "Category 3",
+                        price = "$70",
+                        description = "Description 3"
+                    )
+                )
+
                 productAdapter.notifyDataSetChanged()
             }
         }

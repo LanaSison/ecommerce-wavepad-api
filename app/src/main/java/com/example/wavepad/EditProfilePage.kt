@@ -34,16 +34,11 @@ class EditProfilePage : AppCompatActivity() {
         }
 
         saveButton.setOnClickListener {
-            // Retrieve entered profile information
             val name = nameEditText.text.toString()
             val isSeller = sellerCheckBox.isChecked
             val isMember = memberCheckBox.isChecked
             val contactInfo = contactInfoEditText.text.toString()
 
-            // Update the profile information (e.g., in SharedPreferences or a database)
-            // This is where you would save the profile information and the selected image URI
-
-            // Navigate back to AccountPage
             val intent = Intent()
             intent.putExtra("name", name)
             intent.putExtra("isSeller", isSeller)

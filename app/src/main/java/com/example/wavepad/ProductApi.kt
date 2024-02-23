@@ -1,5 +1,11 @@
 package com.example.wavepad
 
+
+//ProductApi Interface:
+//This interface defines the API endpoints using Retrofit annotations.
+//In this case, there's only one endpoint, getProducts(), which fetches a list of products.
+//The Companion object inside the interface provides a factory method create() to instantiate the Retrofit interface implementation.
+
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

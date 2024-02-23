@@ -11,10 +11,14 @@ class VoucherPage: AppCompatActivity() {
         setContentView(R.layout.voucher_page)
 
         val imageView: ImageView = findViewById(R.id.returnback)
+        val returnButton: ImageView = findViewById(R.id.returnback)
 
         imageView.setOnClickListener {
             val signUpIntent = Intent(this@VoucherPage, HomePage::class.java)
             startActivity(signUpIntent)
+        }
+        returnButton.setOnClickListener {
+            finish()
         }
     }
 }

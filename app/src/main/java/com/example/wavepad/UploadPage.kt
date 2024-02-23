@@ -29,6 +29,11 @@ class UploadPage : AppCompatActivity() {
         buttonChoose = findViewById(R.id.buttonChoose)
         buttonUpload = findViewById(R.id.buttonUpload)
 
+        val returnButton: ImageView = findViewById(R.id.returnback)
+        returnButton.setOnClickListener {
+            finish()
+        }
+
         buttonChoose.setOnClickListener {
             openImageChooser()
         }

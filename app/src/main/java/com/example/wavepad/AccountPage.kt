@@ -29,14 +29,12 @@ class AccountPage : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_EDIT_PROFILE && resultCode == Activity.RESULT_OK) {
-            // Update profile information based on the data returned from EditProfilePage
             val name = data?.getStringExtra("name")
             val isSeller = data?.getBooleanExtra("isSeller", false)
             val isMember = data?.getBooleanExtra("isMember", false)
             val contactInfo = data?.getStringExtra("contactInfo")
             val profileImageUriString = data?.getStringExtra("profileImageUri")
-
-            // Update UI with the new profile information
+            
             val nameTextView: TextView = findViewById(R.id.name)
             val sellerTextView: TextView = findViewById(R.id.sellerTextView)
             val contactInfoTextView: TextView = findViewById(R.id.contactInfoTextView)
@@ -45,11 +43,11 @@ class AccountPage : AppCompatActivity() {
             sellerTextView.text = if (isSeller == true) "Seller" else "Member"
             contactInfoTextView.text = "Contact Info: $contactInfo"
 
-            // Update profile picture
             profileImageUriString?.let { uriString ->
                 val profileImageUri = Uri.parse(uriString)
                 profileImageView.setImageURI(profileImageUri)
             }
+
         }
     }
 }

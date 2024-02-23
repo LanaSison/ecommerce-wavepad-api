@@ -10,6 +10,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class ProductAdapter(
+
+
     private var productList: List<ProductDataClass>,
     private val onItemClick: (ProductDataClass) -> Unit,
     private val onBuyButtonClick: (ProductDataClass) -> Unit
