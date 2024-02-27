@@ -1,5 +1,6 @@
 package com.example.wavepad
 
+import SignUpPage
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
