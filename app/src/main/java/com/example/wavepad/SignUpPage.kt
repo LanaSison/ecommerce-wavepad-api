@@ -54,14 +54,15 @@
 //        })
 //    }
 //}
+package com.example.wavepad
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.wavepad.HomePage
 import com.example.wavepad.R
 import com.example.wavepad.SignUpLogInPage
 import com.example.wavepad.User
@@ -118,19 +119,21 @@ class SignUpPage : AppCompatActivity() {
         call.enqueue(object : Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                 if (response.isSuccessful) {
-                    val signUpIntent = Intent(this@SignUpPage, HomePage::class.java)
+                    val signUpIntent = Intent(this@SignUpPage, SignUpLogInPage::class.java)
                     startActivity(signUpIntent)
                     finish() // Finish current activity to prevent going back
                 } else {
-                    // Handle unsuccessful signup
-                    // For example, display an error message
+                    // Display a toast indicating response error
+                    Toast.makeText(this@SignUpPage, "Response error", Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                // Handle failure
-                // For example, display a toast indicating network error
+                // Display a toast indicating the specific failure reason
+                val errorMessage = "Network request failed: ${t.message}"
+                Toast.makeText(this@SignUpPage, errorMessage, Toast.LENGTH_SHORT).show()
             }
+
         })
     }
 }
