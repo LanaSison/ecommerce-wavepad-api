@@ -119,24 +119,55 @@ class SignUpPage : AppCompatActivity() {
         call.enqueue(object : Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                 if (response.isSuccessful) {
+                    // Handle successful response
                     val signUpIntent = Intent(this@SignUpPage, SignUpLogInPage::class.java)
                     startActivity(signUpIntent)
                     finish() // Finish current activity to prevent going back
                 } else {
-                    // Display a toast indicating response error
-                    Toast.makeText(this@SignUpPage, "Response error", Toast.LENGTH_SHORT).show()
+                    // Handle unsuccessful response
+                    val statusCode = response.code() // Get the HTTP status code
+                    val errorMessage = when (statusCode) {
+                        // Add more cases as needed for different status codes
+                        404 -> "Resource not found"
+                        else -> "Response error: $statusCode" // Default error message
+                    }
+                    Toast.makeText(this@SignUpPage, errorMessage, Toast.LENGTH_SHORT).show()
+
+                    // Optionally, inspect the response body for more details
+                    val errorBody = response.errorBody()?.string()
+                    if (!errorBody.isNullOrEmpty()) {
+                        // Parse and display additional error details if available
+                        // Example: Toast.makeText(this@SignUpPage, errorBody, Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
 
             override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                // Display a toast indicating the specific failure reason
+                // Handle network-related failures
                 val errorMessage = "Network request failed: ${t.message}"
                 Toast.makeText(this@SignUpPage, errorMessage, Toast.LENGTH_SHORT).show()
             }
-
         })
     }
 }
 
-
+//        call.enqueue(object : Callback<UserResponse> {
+//            override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
+//                if (response.isSuccessful) {
+//                    val signUpIntent = Intent(this@SignUpPage, SignUpLogInPage::class.java)
+//                    startActivity(signUpIntent)
+//                    finish() // Finish current activity to prevent going back
+//                } else {
+//                    // Display a toast indicating response error
+//                    Toast.makeText(this@SignUpPage, "Response error", Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+//                // Display a toast indicating the specific failure reason
+//                val errorMessage = "Network request failed: ${t.message}"
+//                Toast.makeText(this@SignUpPage, errorMessage, Toast.LENGTH_SHORT).show()
+//            }
+//
+//        })
 

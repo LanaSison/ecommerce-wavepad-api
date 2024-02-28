@@ -36,7 +36,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private const val BASE_URL = "http://127.0.0.1:8000/api/"
+    private const val BASE_URL = "https://wavepad-ecom-529a3cf49f8f.herokuapp.com/"
 
     // Create Retrofit instance
     private val retrofit: Retrofit by lazy {
